@@ -15,6 +15,7 @@
 package ru.spb.tksoft.service.nats.config;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,9 +27,10 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @AutoConfiguration
 @ConditionalOnProperty(name = "nats.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnMissingBean(NatsConfiguration.class)
 @EnableConfigurationProperties(NatsConfiguration.class)
 @ComponentScan(basePackages = "ru.spb.tksoft.service.nats")
 public class NatsAutoConfiguration {
 
-    // This class can be empty, annotations do all the work
+    // This class can be empty, annotations do all the work.
 }

@@ -15,7 +15,6 @@
 package ru.spb.tksoft.service.nats.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import lombok.Data;
 
 /**
@@ -24,7 +23,6 @@ import lombok.Data;
  * @author Konstantin Terskikh, kostus.online.1974@yandex.ru, 2025
  */
 @Data
-@Configuration
 @ConfigurationProperties(prefix = "nats")
 public class NatsConfiguration {
 
